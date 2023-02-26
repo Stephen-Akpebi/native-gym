@@ -21,6 +21,19 @@ class Trainers(models.Model):
     def __str__(self):
         return self.title
 
+class Trainer(models.Model):
+    title = models.CharField(max_length=200, unique=False)
+    name = models.CharField(max_length=200, unique=True)
+    image = models.ImageField(upload_to='users/%Y/%m/%d/', blank=True)
+    fb_account = models.CharField(max_length=200, unique=True)
+    youtube_account = models.CharField(max_length=200, unique=True)
+    insta_account = models.CharField(max_length=200, unique=True)
+    twitter_account = models.CharField(max_length=200, unique=True)
+    trainer_email = models.CharField(max_length=200, unique=True)
+    
+    def __str__(self):
+        return self.title
+
 
 class Gallery(models.Model):
     title = models.CharField(max_length=200, unique=True)

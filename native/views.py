@@ -7,7 +7,7 @@ from django.shortcuts import render
 from django.views.generic import TemplateView, DetailView
 from django.views import generic
 from blog.models import Post
-from native.models import Gallery, Trainers, Bmi
+from native.models import Gallery, Trainer, Bmi
 from native.forms import ContactForm
 from django.views.generic.edit import FormView
 from django.shortcuts import render, redirect
@@ -19,7 +19,7 @@ from django.contrib import messages
 # Create your views here.
 
 class HomePage(generic.ListView):
-    queryset = Trainers.objects.all()
+    queryset = Trainer.objects.all()
     template_name = 'index.html'
 
 
@@ -67,7 +67,7 @@ class Gallery(generic.ListView):
 
 
 class Team(generic.ListView):
-    queryset = Trainers.objects.all()
+    queryset = Trainer.objects.all()
     template_name = 'team.html'
 
 class Timetable(TemplateView):
@@ -94,7 +94,7 @@ class BMI(TemplateView):
 
 
 class About(generic.ListView):
-    queryset = Trainers.objects.all()
+    queryset = Trainer.objects.all()
     template_name = 'about-us.html'
     
 
